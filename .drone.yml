@@ -5,6 +5,7 @@ steps:
   - name: 执行单元测试
     image: golang
     commands:
+      - GOPROXY=https://goproxy.cn go build
       - go test ./...
   - name: 构建
     image: alpine
