@@ -20,6 +20,4 @@ steps:
       password: 'wangjie8217'
       port: 22
       script:
-        - - echo ====开始部署=======
         - /home/wangjie/app/ok-project/repull.sh
-        - echo ====部署成功======
