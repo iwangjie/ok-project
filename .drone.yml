@@ -8,3 +8,12 @@ steps:
     commands:
       - echo hello
       - echo world1
+run:
+  image: appleboy/drone-ssh
+    host: 172.17.0.1
+    port: 22
+    username: wangjie
+    password: wangjie8217
+    script:
+      - cd /home/wangjie/app/ok-project
+      - ./repull.sh
