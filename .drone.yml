@@ -1,14 +1,14 @@
-kind: pipeline
-type: docker
-name: default
-
-steps:
-  - name: 测试
-    image: alpine
-    commands:
-      - echo hello
-      - echo world1
----
+#kind: pipeline
+#type: docker
+#name: default
+#
+#steps:
+#  - name: test
+#    image: alpine
+#    commands:
+#      - echo hello
+#      - echo world1
+#---
 kind: pipeline
 type: ssh
 name: 发布
