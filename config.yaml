@@ -1,0 +1,4 @@
+app:
+  name: ok_project
+db:
+  url: 'mysql:xxx'
