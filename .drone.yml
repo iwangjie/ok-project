@@ -5,10 +5,10 @@ name: default
 steps:
   - name: greeting
     image: appleboy/drone-ssh
-      host: 172.17.0.1
-      port: 22
-      username: wangjie
-      password: wangjie8217
-      script:
-        - cd /home/wangjie/app/ok-project
-        - ./repull.sh
+    host: 172.17.0.1
+    port: 22
+    username: wangjie
+    password: wangjie8217
+    script:
+      - cd /home/wangjie/app/ok-project
+      - ./repull.sh
