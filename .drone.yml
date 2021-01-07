@@ -1,26 +1,16 @@
-#kind: pipeline
-#type: docker
-#name: default
-#
-#steps:
-#  - name: test
-#    image: alpine
-#    commands:
-#      - echo hello
-#      - echo world1
-#---
 kind: pipeline
-type: ssh
-name: 发布
-
-server:
-  host: 172.17.0.1
-  user: wangjie
-  password: wangjie8217
-    from_secret: password
+name: 打包测试
 
 steps:
-  - name: repush
-    commands:
-      - cd /home/wangjie/app/ok-project
-      - ./repull.sh
+  - name: ssh commands
+    image: appleboy/drone-ssh
+    settings:
+      host: 172.17.0.1
+      username: wangjie
+      password: wangjie8217
+        from_secret: ftp_password
+      port: 22
+      script:
+        - echo ====暂停容器开始=======
+        - echo ====开始部署=======
+        - echo ====部署成功======
