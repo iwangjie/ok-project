@@ -4,16 +4,19 @@ name: ok应用自动部署
 steps:
   - name: 执行单元测试
     image: golang
+    pull: never
     commands:
       - GOPROXY=https://goproxy.cn go build
       - go test ./...
   - name: 构建
     image: alpine
+    pull: never
     commands:
       - echo hello
       - echo world
   - name: 部署
     image: appleboy/drone-ssh
+    pull: never
     settings:
       host: '172.17.0.1'
       username: 'wangjie'
