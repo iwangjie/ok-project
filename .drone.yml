@@ -3,12 +3,25 @@ type: docker
 name: default
 
 steps:
-  - name: greeting
-    image: appleboy/drone-ssh
-    host: 172.17.0.1
-    port: 22
-    username: wangjie
-    password: wangjie8217
-    script:
+  - name: 测试
+    image: alpine
+    commands:
+      - echo hello
+      - echo world1
+      -
+---
+kind: pipeline
+type: ssh
+name: 发布
+
+server:
+  host: 172.17.0.1
+  user: wangjie
+  password: wangjie8217
+    from_secret: password
+
+steps:
+  - name: repush
+    commands:
       - cd /home/wangjie/app/ok-project
       - ./repull.sh
