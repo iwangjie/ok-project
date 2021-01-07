@@ -1,8 +1,16 @@
 kind: pipeline
-name: 打包测试
+name: ok应用自动部署
 
 steps:
+  - name: 执行单元测试
+    image: golang
+    commands:
+      - go test ./...
   - name: 构建
+    image: alpine
+    commands:
+      - echo hello
+      - echo world
   - name: 部署
     image: appleboy/drone-ssh
     settings:
