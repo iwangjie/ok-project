@@ -22,7 +22,7 @@ steps:
       insecure: false
       mirror: https://qcxmbvw.mirror.aliyuncs.com
       registry: registry.cn-hangzhou.aliyuncs.com
-      repo: registry.cn-hangzhou.aliyuncs.com/iwangjie/ok-project
+      repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project
       use_cache: true
       username: 13373381619
       passowrd: wangjie8217
