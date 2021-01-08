@@ -11,6 +11,7 @@ func main() {
 	third_party.SetupConfiguration("../")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/statistics", api.Statistics())
+	mux.HandleFunc("/login", api.UserLogin())
 	err := http.ListenAndServe(":81", mux)
 	if err != nil {
 		panic("启动服务失败.")
