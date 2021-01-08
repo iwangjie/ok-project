@@ -53,15 +53,15 @@ steps:
     settings:
       debug: true
       tips_title: 再试试
-      message_color: 00800
-      type: text
+#      message_color: 00800
+      type: markdown
       token: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01
       secret: SECd34fc7b5b3589587484a7ba0c07068b3b0b24835c6b695127e08ef2daeeea20d
-#      success_pic: https://camo.githubusercontent.com/6002730968e34dc35d3050284ca79805e226e0cb6161cdb3cdee34a00f0f00f6/68747470733a2f2f692e696d6775722e636f6d2f78467243545a702e6a7067
+      success_pic: https://camo.githubusercontent.com/6002730968e34dc35d3050284ca79805e226e0cb6161cdb3cdee34a00f0f00f6/68747470733a2f2f692e696d6775722e636f6d2f78467243545a702e6a7067
 #      tpl: "[PLUGIN_SUCCESS_PIC]"
 #      message_color: true
 #      message_pic: true
 #      sha_link: true
 #      success_pic: "https://camo.githubusercontent.com/6002730968e34dc35d3050284ca79805e226e0cb6161cdb3cdee34a00f0f00f6/68747470733a2f2f692e696d6775722e636f6d2f78467243545a702e6a7067"
 #      failure_pic: true
-#      debug: true
+      debug: true
