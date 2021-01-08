@@ -19,6 +19,7 @@ steps:
     image: plugins/docker
     pull: never
     settings:
+      debug: true
 #      insecure: false
       mirror: https://qcxmbvw.mirror.aliyuncs.com
       registry: registry.cn-hangzhou.aliyuncs.com
