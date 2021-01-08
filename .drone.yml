@@ -21,7 +21,7 @@ steps:
     settings:
       mirror: https://eqcxmbvw.mirror.aliyuncs.com
       registry: 172.17.0.1:5000
-      repo: localhost:5000/iwangjie/ok-project
+      repo: 172.17.0.1:5000/iwangjie/ok-project
       use_cache: true
     tags:
       - latest
