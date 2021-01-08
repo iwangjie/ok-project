@@ -46,37 +46,22 @@ steps:
         - docker start ok-project
         - docker create --name ok-project-stand -v /home/wangjie/app/ok-project/etc/config.yaml:/etc/ok_project/config.yaml --network app-network --network-alias app-node2 registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project:latest
         - docker start ok-project-stand
+    when:
+      event: push
+      branch: master
 
-  - name: 钉钉通知
+  - name: 测试钉钉通知
     image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
     pull: never
     settings:
-      token: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01
-#        from_secret: SECd34fc7b5b3589587484a7ba0c07068b3b0b24835c6b695127e08ef2daeeea20d     # 钉钉的token(前面配置)
+      token: 2decc015a6603f3ba58d4f6a4b934e45415f2c34a5e8f284e7d96d3f67e54933
       type: markdown
       message_color: true
       message_pic: true
       sha_link: true
     when:
-      status: [failure, success]   # 不管成功与否都发通知
-#  - name: 部署到生产环境
-#    image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
-#    pull: never
-#    settings:
-#      token: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01
-#      #        from_secret: SECd34fc7b5b3589587484a7ba0c07068b3b0b24835c6b695127e08ef2daeeea20d     # 钉钉的token(前面配置)
-#      type: markdown
-#      message_color: true
-#      message_pic: true
-#      sha_link: true
-#    when:
-#      status: [ failure, success ]
-#    trigger:
-#      event:
-#        - promote
-#      target:
-#        - production
-
+      status: [failure, success]
+      event: push
 
 ---
 
@@ -89,7 +74,17 @@ steps:
     image: node
     commands:
       - echo 部署成功
-
+  - name: 生产钉钉通知
+    image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
+    pull: never
+    settings:
+      token: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01
+      type: markdown
+      message_color: true
+      message_pic: true
+      sha_link: true
+    when:
+      status: [ failure, success ]
 trigger:
   event:
     - promote
