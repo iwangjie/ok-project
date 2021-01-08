@@ -2,14 +2,14 @@ kind: pipeline
 name: ok应用自动部署
 
 steps:
-#  - name: linter
-#    image: golang:latest
-#    environment:
-#      GOPROXY: https://goproxy.cn
-#    commands:
-#      - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
-#      - golangci-lint run
-  - name: 执行单元测试
+  - name: 规范检测
+    image: golang
+    environment:
+      GOPROXY: https://goproxy.cn
+    commands:
+      - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+      - golangci-lint run
+  - name: 单元测试
     image: golang
     pull: never
     commands:
@@ -30,7 +30,7 @@ steps:
     when:
       event: push
       branch: master
-  - name: 部署
+  - name: 部署镜像
     image: appleboy/drone-ssh
     pull: never
     settings:

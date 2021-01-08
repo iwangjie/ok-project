@@ -10,7 +10,7 @@ type MyHandler struct {
 }
 
 func (m MyHandler) ServeHTTP(writer http.ResponseWriter, r *http.Request) {
-	writer.Write([]byte("完美~~~......"))
+	writer.Write([]byte("测试一下~~~......"))
 }
 
 func main() {
