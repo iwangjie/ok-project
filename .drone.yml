@@ -8,7 +8,7 @@ steps:
       GO111MODULE: on
       GOPROXY: https://goproxy.cn
     commands:
-      - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.34.1
+      - go get github.com/golangci/golangci-lint/cmd/golangci-lint:1.31.0
       - golangci-lint run
   - name: 单元测试
     image: golang
