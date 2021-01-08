@@ -15,23 +15,21 @@ steps:
 #    commands:
 #      - GOPROXY=https://goproxy.cn go build
 #      - go test ./...
-  - name: 构建镜像
-    image: plugins/docker
-    pull: never
-    settings:
-#      target: debug
-#      insecure: false
-      mirror: https://qcxmbvw.mirror.aliyuncs.com
-      registry: registry.cn-hangzhou.aliyuncs.com
-      repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project
-      use_cache: true
-      username: 13373381619
-      password: wangjie8217
-    tags:
-      - latest
-    when:
-      event: push
-      branch: master
+#  - name: 构建镜像
+#    image: plugins/docker
+#    pull: never
+#    settings:
+#      mirror: https://qcxmbvw.mirror.aliyuncs.com
+#      registry: registry.cn-hangzhou.aliyuncs.com
+#      repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project
+#      use_cache: true
+#      username: 13373381619
+#      password: wangjie8217
+#    tags:
+#      - latest
+#    when:
+#      event: push
+#      branch: master
   - name: 部署
     image: appleboy/drone-ssh
     pull: never
@@ -41,4 +39,9 @@ steps:
       password: 'wangjie8217'
       port: 22
       script:
-        - /home/wangjie/app/ok-project/repull.sh
+        - docker pull registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project
+        - docker stop $(docker ps | grep ok-project | awk '{print $1}') && docker rm $(docker ps | grep ok-project | awk '{print $1}')
+        - docker create --name ok-project -v /home/wangjie/app/ok-project/etc/config.yaml:/etc/ok_project/config.yaml --network app-network --network-alias app-node1 registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project:latest
+        - docker start ok-project
+        - docker create --name ok-project-stand -v /home/wangjie/app/ok-project/etc/config.yaml:/etc/ok_project/config.yaml --network app-network --network-alias app-node2 registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project:latest
+        - docker start ok-project-stand
