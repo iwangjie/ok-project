@@ -7,7 +7,7 @@ RUN GOOS=linux go build -ldflags="-s -w" -o app
 
 
 FROM scratch as prod
-WORKDIR /app
+#WORKDIR /app
 COPY --from=build /release/app /
 ENTRYPOINT ["/app"]
 
