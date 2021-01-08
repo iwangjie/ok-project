@@ -10,12 +10,16 @@ steps:
     commands:
       - go get github.com/golangci/golangci-lint/cmd/golangci-lint
       - golangci-lint run
+    when:
+      event: push
   - name: 单元测试
     image: golang
     pull: never
     commands:
       - GOPROXY=https://goproxy.cn go build
       - go test ./...
+    when:
+      event: push
   - name: 构建镜像
     image: plugins/docker
     pull: never
