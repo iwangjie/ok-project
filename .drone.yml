@@ -19,7 +19,7 @@ steps:
     image: plugins/docker
     pull: never
     settings:
-      insecure: true
+      insecure: false
       mirror: https://qcxmbvw.mirror.aliyuncs.com
       registry: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/wangjie_dev
       repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/wangjie_dev/iwangjie/ok-project
