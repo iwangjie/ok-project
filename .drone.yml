@@ -59,3 +59,39 @@ steps:
       sha_link: true
     when:
       status: [failure, success]   # 不管成功与否都发通知
+#  - name: 部署到生产环境
+#    image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
+#    pull: never
+#    settings:
+#      token: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01
+#      #        from_secret: SECd34fc7b5b3589587484a7ba0c07068b3b0b24835c6b695127e08ef2daeeea20d     # 钉钉的token(前面配置)
+#      type: markdown
+#      message_color: true
+#      message_pic: true
+#      sha_link: true
+#    when:
+#      status: [ failure, success ]
+#    trigger:
+#      event:
+#        - promote
+#      target:
+#        - production
+
+
+---
+
+kind: pipeline
+type: docker
+name: deploy
+
+steps:
+  - name: 部署到生产
+    image: node
+    commands:
+      - echo 部署成功
+
+trigger:
+  event:
+    - promote
+  target:
+    - production
