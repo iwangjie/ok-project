@@ -67,13 +67,13 @@ steps:
 #      debug: true
 
   - name: 钉钉通知
-      image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
-      settings:
-        token:
-          from_secret: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01     # 钉钉的token(前面配置)
-        type: markdown
-        message_color: true
-        message_pic: true
-        sha_link: true
-      when:
-        status: [failure, success]   # 不管成功与否都发通知
+    image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
+    settings:
+      token:
+        from_secret: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01     # 钉钉的token(前面配置)
+      type: markdown
+      message_color: true
+      message_pic: true
+      sha_link: true
+    when:
+      status: [failure, success]   # 不管成功与否都发通知
