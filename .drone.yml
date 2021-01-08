@@ -9,12 +9,12 @@ steps:
 #    commands:
 #      - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
 #      - golangci-lint run
-  - name: 执行单元测试
-    image: golang
-    pull: never
-    commands:
-      - GOPROXY=https://goproxy.cn go build
-      - go test ./...
+#  - name: 执行单元测试
+#    image: golang
+#    pull: never
+#    commands:
+#      - GOPROXY=https://goproxy.cn go build
+#      - go test ./...
   - name: 构建镜像
     image: plugins/docker
     pull: never
@@ -23,7 +23,7 @@ steps:
       mirror: https://eqcxmbvw.mirror.aliyuncs.com
       registry: 172.17.0.1:5000
       repo: 172.17.0.1:5000/iwangjie/ok-project
-      use_cache: true
+#      use_cache: true
     tags:
       - latest
     when:
