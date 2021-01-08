@@ -23,7 +23,9 @@ steps:
       mirror: https://qcxmbvw.mirror.aliyuncs.com
       registry: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/wangjie_dev
       repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/wangjie_dev/iwangjie/ok-project
-#      use_cache: true
+      use_cache: true
+      username: 13373381619
+      passowrd: wangjie8217
     tags:
       - latest
     when:
