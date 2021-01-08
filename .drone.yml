@@ -56,6 +56,7 @@ steps:
       token: 2decc015a6603f3ba58d4f6a4b934e45415f2c34a5e8f284e7d96d3f67e54933
       secret: SEC00ab81354ae7c2f3bd11eb5241a0e6d4ec820d7607dc121ba3ef523485c1fb33
       success_pic: https://camo.githubusercontent.com/6002730968e34dc35d3050284ca79805e226e0cb6161cdb3cdee34a00f0f00f6/68747470733a2f2f692e696d6775722e636f6d2f78467243545a702e6a7067
+      tpl: "[PLUGIN_SUCCESS_PIC]"
 #      message_color: true
 #      message_pic: true
 #      sha_link: true
