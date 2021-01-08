@@ -47,3 +47,11 @@ steps:
         - docker create --name ok-project-stand -v /home/wangjie/app/ok-project/etc/config.yaml:/etc/ok_project/config.yaml --network app-network --network-alias app-node2 registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project:latest
         - docker start ok-project-stand
         - echo 部署完成
+  - name: 钉钉通知结果
+    image: lddsb/drone-dingtalk-message
+    settings:
+      token: 2decc015a6603f3ba58d4f6a4b934e45415f2c34a5e8f284e7d96d3f67e54933
+      type: markdown
+      message_color: true
+      message_pic: true
+      sha_link: true
