@@ -19,24 +19,15 @@ steps:
     image: plugins/docker
     pull: never
     settings:
+      mirror: https://eqcxmbvw.mirror.aliyuncs.com
       registry: localhost:5000
       repo: iwangjie/ok-project
       use_cache: true
-    #      username:
-    #        from_secret: docker_username
-    #      password:
-    #        from_secret: docker_password
     tags:
       - latest
     when:
       event: push
       branch: master
-  - name: 构建
-    image: alpine
-    pull: never
-    commands:
-      - echo hello
-      - echo world
   - name: 部署
     image: appleboy/drone-ssh
     pull: never
