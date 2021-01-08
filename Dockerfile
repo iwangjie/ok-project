@@ -9,9 +9,9 @@ RUN go build -o app
 
 
 FROM alpine:3.10 as prod
-COPY --from=build /etc/passwd /etc/passwd
+#COPY --from=build /etc/passwd /etc/passwd
 COPY --from=build /release/app /
-USER app-runner
+#USER app-runner
 ENTRYPOINT ["/app"]
 
 
