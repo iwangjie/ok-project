@@ -45,3 +45,4 @@ steps:
         - docker start ok-project
         - docker create --name ok-project-stand -v /home/wangjie/app/ok-project/etc/config.yaml:/etc/ok_project/config.yaml --network app-network --network-alias app-node2 registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project:latest
         - docker start ok-project-stand
+        - echo 部署完成
