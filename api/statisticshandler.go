@@ -7,6 +7,6 @@ import (
 
 func Statistics() func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("appName:"+config.Config.App.Name))
+		_, _ = w.Write([]byte("appName:" + config.Config.App.Name))
 	}
 }
