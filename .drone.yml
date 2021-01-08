@@ -48,7 +48,7 @@ steps:
 #        - docker start ok-project-stand
 #        - echo 部署完成
   - name: 钉钉通知结果
-    image: lddsb/drone-dingtalk-message
+    image: lddsb/drone-dingtalk-message:1.2.6
     pull: never
     settings:
       debug: true
