@@ -17,8 +17,10 @@ steps:
       - go test ./...
   - name: 构建镜像
     image: plugins/docker
+    pull: never
     settings:
-      repo: localhost:5000
+      registry: localhost:5000
+      repo: iwangjie/ok-project
       use_cache: true
     #      username:
     #        from_secret: docker_username
