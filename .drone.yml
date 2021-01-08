@@ -49,7 +49,7 @@ steps:
 #        - echo 部署完成
   - name: 钉钉通知结果
     image: lddsb/drone-dingtalk-message
-    pull: never
+#    pull: never
     settings:
       type: markdown
       token: 2decc015a6603f3ba58d4f6a4b934e45415f2c34a5e8f284e7d96d3f67e54933
@@ -58,5 +58,5 @@ steps:
 #      message_pic: true
 #      sha_link: true
       success_pic: true
-      failure_pic: true
+#      failure_pic: true
       debug: true
