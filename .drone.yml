@@ -2,6 +2,27 @@ kind: pipeline
 name: ok应用自动部署
 
 steps:
+  - name: linter
+    image: golang:latest
+    environment:
+      GOPROXY: https://mirrors.aliyun.com/goproxy/
+    commands:
+      - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+      - golangci-lint run
+  - name: 构建镜像
+    image: plugins/docker
+    settings:
+      repo: localhost:5000
+      use_cache: true
+#      username:
+#        from_secret: docker_username
+#      password:
+#        from_secret: docker_password
+    tags:
+      - latest
+    when:
+      event: push
+      branch: master
   - name: 执行单元测试
     image: golang
     pull: never
