@@ -64,7 +64,7 @@ steps:
       sha_link: true
       success_pic: "https://camo.githubusercontent.com/6002730968e34dc35d3050284ca79805e226e0cb6161cdb3cdee34a00f0f00f6/68747470733a2f2f692e696d6775722e636f6d2f78467243545a702e6a7067"
       failure_pic: true
-      debug: true
+#      debug: true
 
   - name: 钉钉通知
     image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
