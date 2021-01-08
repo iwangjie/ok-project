@@ -9,26 +9,26 @@ steps:
 #    commands:
 #      - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint
 #      - golangci-lint run
-  - name: 构建镜像
-    image: plugins/docker
-    settings:
-      repo: localhost:5000
-      use_cache: true
-#      username:
-#        from_secret: docker_username
-#      password:
-#        from_secret: docker_password
-    tags:
-      - latest
-    when:
-      event: push
-      branch: master
   - name: 执行单元测试
     image: golang
     pull: never
     commands:
       - GOPROXY=https://goproxy.cn go build
       - go test ./...
+  - name: 构建镜像
+      image: plugins/docker
+      settings:
+        repo: localhost:5000
+        use_cache: true
+      #      username:
+      #        from_secret: docker_username
+      #      password:
+      #        from_secret: docker_password
+      tags:
+        - latest
+      when:
+        event: push
+        branch: master
   - name: 构建
     image: alpine
     pull: never
