@@ -10,7 +10,7 @@ type MyHandler struct {
 }
 
 func (m MyHandler) ServeHTTP(writer http.ResponseWriter, r *http.Request) {
-	writer.Write([]byte("测试一下~~~......"))
+	_, _ = writer.Write([]byte("测试一下~~~......"))
 }
 
 func main() {
@@ -18,5 +18,8 @@ func main() {
 	third_party.SetupConfiguration("../")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/statistics", api.Statistics())
-	http.ListenAndServe(":81", mux)
+	err := http.ListenAndServe(":81", mux)
+	if err != nil {
+		panic("启动服务失败.")
+	}
 }
