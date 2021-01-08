@@ -66,6 +66,9 @@ steps:
     when:
       status: [failure, success]
       event: push
+trigger:
+  event: push
+  branch: master
 
 ---
 
