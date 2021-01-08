@@ -21,3 +21,13 @@ func UserLogin() func(w http.ResponseWriter, r *http.Request) {
 		_, _ = w.Write([]byte("hello. " + username))
 	}
 }
+
+func UserRegister() func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		_ = r.ParseForm()
+		username := r.Form.Get("username")
+		password := r.Form.Get("password")
+		fmt.Println("login user,username:"+username, ",password:"+password)
+		_, _ = w.Write([]byte("hello. 注册成功" + username))
+	}
+}

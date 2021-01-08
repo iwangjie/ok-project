@@ -12,6 +12,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/statistics", api.Statistics())
 	mux.HandleFunc("/login", api.UserLogin())
+	mux.HandleFunc("/register", api.UserRegister())
 	err := http.ListenAndServe(":81", mux)
 	if err != nil {
 		panic("启动服务失败.")
