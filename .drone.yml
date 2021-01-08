@@ -26,7 +26,7 @@ steps:
       repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project
       use_cache: true
       username: 13373381619
-      passoword: wangjie8217
+      password: wangjie8217
     tags:
       - latest
     when:
