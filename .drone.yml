@@ -20,9 +20,9 @@ steps:
     pull: never
     settings:
       insecure: true
-#      mirror: https://qcxmbvw.mirror.aliyuncs.com
-      registry: 172.17.0.1:5000
-      repo: 172.17.0.1:5000/iwangjie/ok-project
+      mirror: https://qcxmbvw.mirror.aliyuncs.com
+      registry: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/wangjie_dev
+      repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/wangjie_dev/iwangjie/ok-project
 #      use_cache: true
     tags:
       - latest
