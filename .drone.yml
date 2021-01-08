@@ -59,7 +59,7 @@ steps:
       secret: SECd34fc7b5b3589587484a7ba0c07068b3b0b24835c6b695127e08ef2daeeea20d
       success_pic: https://camo.githubusercontent.com/6002730968e34dc35d3050284ca79805e226e0cb6161cdb3cdee34a00f0f00f6/68747470733a2f2f692e696d6775722e636f6d2f78467243545a702e6a7067
 #      tpl: "[PLUGIN_SUCCESS_PIC]"
-      message_color: 00800
+      success_color: 008000
 #      message_pic: true
 #      sha_link: true
 #      success_pic: "https://camo.githubusercontent.com/6002730968e34dc35d3050284ca79805e226e0cb6161cdb3cdee34a00f0f00f6/68747470733a2f2f692e696d6775722e636f6d2f78467243545a702e6a7067"
