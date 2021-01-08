@@ -19,9 +19,9 @@ steps:
     image: plugins/docker
     pull: never
     settings:
-#      insecure: false
+      insecure: true
 #      mirror: https://qcxmbvw.mirror.aliyuncs.com
-      registry: http://172.17.0.1:5000
+      registry: 172.17.0.1:5000
       repo: 172.17.0.1:5000/iwangjie/ok-project
 #      use_cache: true
     tags:
