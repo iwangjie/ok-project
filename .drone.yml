@@ -52,6 +52,7 @@ steps:
     pull: never
     settings:
       debug: true
+      tips_title: "再试试"
       message_color: 00800
       type: markdown
       token: 2decc015a6603f3ba58d4f6a4b934e45415f2c34a5e8f284e7d96d3f67e54933
