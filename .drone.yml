@@ -23,7 +23,7 @@ steps:
       event: push
   - name: 构建镜像
     image: plugins/docker
-    pull: never
+#    pull: never
     settings:
 #      mirror: https://qcxmbvw.mirror.aliyuncs.com
       registry: registry.cn-hangzhou.aliyuncs.com
