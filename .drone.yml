@@ -80,11 +80,12 @@ name: deploy
 steps:
   - name: 部署到生产
     image: node
+    pull: never
     commands:
       - echo 部署成功
   - name: 生产钉钉通知
     image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
-    pull: never
+#    pull: never
     settings:
       token: 63443d92f7023155a29e068136dd26bfaff2fe7458213a0a772f02988ba41c01
       type: markdown
