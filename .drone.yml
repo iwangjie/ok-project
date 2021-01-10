@@ -25,7 +25,7 @@ steps:
     image: plugins/docker
     pull: never
     settings:
-      mirror: https://qcxmbvw.mirror.aliyuncs.com
+#      mirror: https://qcxmbvw.mirror.aliyuncs.com
       registry: registry.cn-hangzhou.aliyuncs.com
       repo: registry.cn-hangzhou.aliyuncs.com/wangjie_dev/ok-project
       use_cache: true
