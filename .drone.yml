@@ -6,7 +6,7 @@ steps:
     image: golang
     environment:
       GO111MODULE: on
-      GOPROXY: https://goproxy.cn
+#      GOPROXY: https://goproxy.cn
     commands:
       - go get github.com/golangci/golangci-lint/cmd/golangci-lint
       - golangci-lint run
@@ -16,7 +16,7 @@ steps:
     image: golang
     pull: never
     commands:
-      - GOPROXY=https://goproxy.cn go build
+      - go build
       - go test ./...
     when:
       event: push
