@@ -57,7 +57,7 @@ steps:
 
   - name: 测试钉钉通知
     image: guoxudongdocker/drone-dingtalk    # 钉钉通知专用镜像
-    pull: never
+#    pull: never
     settings:
       token: 2decc015a6603f3ba58d4f6a4b934e45415f2c34a5e8f284e7d96d3f67e54933
       type: markdown
